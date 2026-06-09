@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import { Badge, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import logoLibreria from "../assets/libreriaOnline.png";
+import logoLibreria from "../assets/LibreriaOnline.png";
 import { useCarrito } from "../context/CarritoContext";
 import { useTheme } from "../context/ThemeContext";
 
