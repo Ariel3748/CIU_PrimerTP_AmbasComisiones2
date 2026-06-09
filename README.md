@@ -99,5 +99,5 @@ Luca La Fuente - [GitHub Profile](https://github.com/LucaLaFuente)
 
 El proyecto se encuentra optimizado, compilado y desplegado de manera pública para su testeo online:
 
-Ver el proyecto en vivo aquí (Completar con la URL de Vercel/Netlify si realizaron el deploy)
+[Ver el proyecto en vivo aquí](https://ciuprimerparcial2026.netlify.app/) 
 
