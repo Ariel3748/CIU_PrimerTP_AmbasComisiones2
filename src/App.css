@@ -1,0 +1,16 @@
+.navbar-link-custom {
+  color: rgba(255, 255, 255, 0.75) !important;
+  transition: all 0.2s ease-in-out;
+  border-radius: 4px;
+}
+.navbar-link-custom:hover {
+  color: #0dcaf0 !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.carrito-btn-custom:hover {
+  background-color: #0dcaf0 !important;
+  color: #212529 !important;
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+}
+
