@@ -3,32 +3,33 @@ import { Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useCarrito } from "../context/CarritoContext";
 
+// Función para mezclar un array de forma aleatoria (Fisher-Yates Shuffle)
 const shuffle = (array) => {
-  const result = [...array];
-  for (let i = result.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [result[i], result[j]] = [result[j], result[i]];
+  const result = [...array]; // Se crea una copia del array original para no mutarlo
+  for (let i = result.length - 1; i > 0; i--) { // Se itera desde el final del array hacia el principio
+    const j = Math.floor(Math.random() * (i + 1)); // Se genera un índice aleatorio entre 0 e i
+    [result[i], result[j]] = [result[j], result[i]]; // Se intercambian los elementos en las posiciones i y j
   }
-  return result;
+  return result; // Se devuelve el array mezclado
 };
 
 function Inicio() {
   const { listaProductos } = useCarrito();
-
+  // Validación para asegurar que listaProductos es un array antes de usarlo
   const listaProductosSegura = useMemo(() => {
     return Array.isArray(listaProductos) ? listaProductos : [];
   }, [listaProductos]);
-
+// Cálculos memoizados para evitar recomputaciones innecesarias
   const novedades = useMemo(() => {
     return [...listaProductosSegura].reverse().slice(0, 3);
   }, [listaProductosSegura]);
-
+// Se ordena por ventas (o 0 si no tiene) y se toman los 3 primeros
   const favoritos = useMemo(() => {
     return [...listaProductosSegura]
       .sort((a, b) => (b.ventas || 0) - (a.ventas || 0))
       .slice(0, 3);
   }, [listaProductosSegura]);
-
+// Se filtran los libros con stock > 0, se mezclan aleatoriamente y se toman 3
   const destacadosAleatorios = useMemo(() => {
     const disponibles = listaProductosSegura.filter((libro) => libro.stock > 0);
     return shuffle(disponibles).slice(0, 3);

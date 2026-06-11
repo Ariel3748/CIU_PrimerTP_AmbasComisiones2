@@ -95,6 +95,12 @@ Luca La Fuente - [GitHub Profile](https://github.com/LucaLaFuente)
 
 ---
 
+## Presentación de Canva
+
+[text](https://canva.link/jfzwm3s1l3c0iqp)
+
+---
+
 ## Link al Deploy
 
 El proyecto se encuentra optimizado, compilado y desplegado de manera pública para su testeo online:

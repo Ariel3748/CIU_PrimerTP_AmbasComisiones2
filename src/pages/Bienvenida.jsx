@@ -2,8 +2,9 @@ import { Button, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 function Bienvenida() {
+  // Hook de navegación para redirigir al usuario al hacer clic en el botón
   const navigate = useNavigate();
-
+// Estilos para el fondo de pantalla completa con la imagen y el overlay oscuro
   const fondoFullStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://img.freepik.com/fotos-premium/explorando-impresionante-biblioteca-long-room-dublin-sus-altas-estanterias-hermoso-interior-madera_1275033-1979.jpg?semt=ais_hybrid&w=740&q=80')`,
     backgroundPosition: "center",

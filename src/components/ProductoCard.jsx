@@ -4,7 +4,7 @@ import { useCarrito } from "../context/CarritoContext";
 
 function ProductoCard({ producto }) {
   const { agregarAlCarrito } = useCarrito();
-  const sinStock = producto.stock === 0;
+  const sinStock = producto.stock === 0; // Se determina si el producto está sin stock para deshabilitar el botón y mostrar un badge
 
   return (
     <Card className="h-100 shadow-sm border-0 position-relative">

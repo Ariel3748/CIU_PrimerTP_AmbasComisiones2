@@ -11,7 +11,8 @@ const CUPONES_DISPONIBLES = {
   "LEER15": 0.15,  // 15% de descuento
   "PROMO20": 0.20   // 20% de descuento
 };
-
+// El CarritoProvider envuelve a los componentes hijos y les proporciona acceso al estado del carrito, 
+// la lista de productos, las funciones para modificar el carrito, y la gestión de cupones promocionales a través del contexto.
 export function CarritoProvider({ children }) {
   const [carrito, setCarrito] = useState(() => {
     const guardado = localStorage.getItem("libreria_carrito");
@@ -29,6 +30,9 @@ export function CarritoProvider({ children }) {
   const [cupónActivo, setCupónActivo] = useState(null);
   const [porcentajeDescuento, setPorcentajeDescuento] = useState(0);
 
+// useEffect para sincronizar el estado del carrito con localStorage cada vez que cambia el carrito o la lista de productos,
+// para mantener la persistencia de los datos entre sesiones y recargas de página 
+// y para asegurar que los cambios en el inventario se reflejen correctamente.
   useEffect(() => {
     localStorage.setItem("libreria_carrito", JSON.stringify(carrito));
   }, [carrito]);
@@ -36,7 +40,8 @@ export function CarritoProvider({ children }) {
   useEffect(() => {
     localStorage.setItem("libreria_productos", JSON.stringify(listaProductos));
   }, [listaProductos]);
-
+// Función para agregar un producto al carrito, verificando el stock disponible y mostrando notificaciones según corresponda 
+// y para manejar la cantidad de cada producto en el carrito.
   const agregarAlCarrito = (producto) => {
     const productoReal =
       listaProductos.find((p) => p.id === producto.id) || producto;
@@ -151,10 +156,10 @@ export function CarritoProvider({ children }) {
         vaciarCarrito,
         registrarVentas,
         totalItems,
-        subtotalPrecio, // Expuesto para ver el desglose
-        montoDescuento,  // Expuesto para ver la rebaja en la UI
-        totalPrecio,     // Ahora viaja ya con el descuento aplicado
-        cupónActivo,     // Expuesto para saber si hay un beneficio activo
+        subtotalPrecio, 
+        montoDescuento,  
+        totalPrecio,     
+        cupónActivo,     
         aplicarCupon,
         removerCupon,
       }}

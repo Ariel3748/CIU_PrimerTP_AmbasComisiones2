@@ -15,15 +15,16 @@ function Contacto() {
     registrarVentas 
   } = useCarrito();
   
+  // Hooks de navegación y estado para el modal
   const navigate = useNavigate();
   const location = useLocation();
-
+// Se determina el modo de la página según el origen de navegación
   const modo = location.state?.desde === "carrito" ? "compra" : "contacto";
-
+// Estado para controlar la visibilidad del modal, los datos del formulario y posibles errores
   const [mostrarModal, setMostrarModal] = useState(false);
   const [datosFormulario, setDatosFormulario] = useState(null);
   const [errorCarrito, setErrorCarrito] = useState("");
-
+// Función para manejar el envío del formulario, validando el carrito si es una compra
   const handleProcesarEnvio = (datos) => {
     if (modo === "compra" && carrito.length === 0) {
       setErrorCarrito(
@@ -32,11 +33,10 @@ function Contacto() {
       return;
     }
     setErrorCarrito("");
-    // CORREGIDO: Eliminada la línea duplicada que rompía el flujo
     setDatosFormulario(datos);
     setMostrarModal(true);
   };
-
+// Función para manejar el cierre del modal y redirigir al inicio, registrando la venta si es una compra
   const handleFinalizarTransaccion = () => {
     setMostrarModal(false);
     if (modo === "compra") {

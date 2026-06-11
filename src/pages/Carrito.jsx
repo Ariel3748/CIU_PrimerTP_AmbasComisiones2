@@ -21,6 +21,7 @@ function Carrito() {
   const [codigoTexto, setCodigoTexto] = useState("");
   const [alertaCupon, setAlertaCupon] = useState({ mensaje: "", esExito: false });
 
+// Función para manejar la validación del cupón al enviar el formulario
   const handleValidarCupon = (e) => {
     e.preventDefault();
     if (!codigoTexto.trim()) return;
@@ -33,6 +34,7 @@ function Carrito() {
     }
   };
 
+  // Función para remover el cupón activo, si lo hay, y limpiar la alerta
   const handleRemoverTodoCupon = () => {
     removerCupon();
     setAlertaCupon({ mensaje: "", esExito: false });

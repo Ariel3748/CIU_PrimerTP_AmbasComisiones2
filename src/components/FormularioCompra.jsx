@@ -8,7 +8,7 @@ const valoresIniciales = {
   entrega: "Retiro en sucursal",
   direccion: "",
 };
-
+// Función de validación que recibe los valores del formulario y devuelve un objeto con los errores encontrados
 const validar = (valores) => {
   const errores = {};
   if (!valores.nombre.trim()) errores.nombre = "El nombre es obligatorio.";
@@ -30,7 +30,7 @@ const validar = (valores) => {
   }
   return errores;
 };
-
+// Componente de formulario de compra que utiliza el hook useForm para manejar el estado y la validación del formulario
 export default function FormularioCompra({ alEnviar }) {
   const {
     datos,

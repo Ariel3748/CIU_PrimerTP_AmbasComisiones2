@@ -8,7 +8,7 @@ const valoresIniciales = {
   tipo: "Consulta General",
   mensaje: "",
 };
-
+// Función de validación que recibe los valores del formulario y devuelve un objeto con los errores encontrados
 const validar = (valores) => {
   const errores = {};
   if (!valores.nombre.trim()) errores.nombre = "El nombre es obligatorio.";
@@ -24,7 +24,7 @@ const validar = (valores) => {
   }
   return errores;
 };
-
+// Componente de formulario de contacto que utiliza el hook useForm para manejar el estado y la validación del formulario
 export default function FormularioContacto({ alEnviar }) {
   const {
     datos,

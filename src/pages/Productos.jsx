@@ -11,6 +11,10 @@ import {
 import { Link } from "react-router-dom";
 import { useCarrito } from "../context/CarritoContext";
 
+// Página de productos que muestra un catálogo de libros con opciones de búsqueda y filtrado por categoría, 
+// utilizando el contexto del carrito para manejar la adición de productos al carrito de compras 
+// y la navegación a los detalles de cada producto a través de React Router.
+
 function Productos() {
   const { listaProductos, agregarAlCarrito } = useCarrito();
   const [busqueda, setBusqueda] = useState("");

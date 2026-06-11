@@ -5,7 +5,8 @@ import { useCarrito } from "../context/CarritoContext";
 function DetalleProducto() {
   const { id } = useParams();
   const { listaProductos, agregarAlCarrito } = useCarrito();
-
+  
+// Se busca el libro por su id, asegurando que ambos sean strings para evitar problemas de comparación
   const libro = listaProductos.find(
     (prod) => prod.id?.toString() === id?.toString(),
   );
