@@ -97,7 +97,7 @@ Luca La Fuente - [GitHub Profile](https://github.com/LucaLaFuente)
 
 ## Presentación de Canva
 
-[text](https://canva.link/jfzwm3s1l3c0iqp)
+[Canva](https://canva.link/jfzwm3s1l3c0iqp)
 
 ---
 
